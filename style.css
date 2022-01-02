@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Vujahday+Script&display=swap');
+
+
+
+* {
+  box-sizing: border-box; /* child countained with nice border neatly within/inside parent element*/
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: 'Questrial', sans-serif;
+	background-color: rgba(255, 140, 0, 0.89);
+  /* background-color: rgba(255, 150, 0, 0.89); */
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+
+
+
+/* Maybe "utilities" */
+.xs {
+  font-size: 1rem;
+}
+
+.sm {
+  font-size: 1.3rem;
+}
+
+.md {
+  font-size: 1.5rem;
+}
+
+.lg {
+  font-size: 2rem;
+}
+
+
+
+
+
+/* Nav section */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+}
+
+
+/* Nav section - logo */
+.logo-left {
+  /* padding-top: 2px; */
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.486);
+  padding: 2px 20px;
+  border-radius: 5px;
+}
+
+.logo-left i,
+.logo-left p {
+  font-size: 36px;
+  width: 45px;
+  height: 10px;
+}
+
+.sand {
+  background-color: rgba(255, 217, 0, 0.76);
+}
+
+.sea {
+  background-color: skyblue;
+}
+
+.logo-left .logo-text {
+  font-family: 'Vujahday Script', cursive;
+  margin: 0 0 0 20px;
+}
+
+/* Nav section - actual nav bar */
+.top-nav a {
+	color: gold;
+	font-size: 1.2rem;
+	background-color: orange;
+	opacity: 0.9;
+	position: relative;
+	padding: 1rem 1.3rem; /* size of colour block */
+	display: inline-block; /* how it interacts with the next element */ 
+	/* top | right | bottom | left */
+	margin: 0 0 5px 0; 
+  /* size of space around it after the colour */
+	cursor: pointer;
+}
+
+.top-nav a:hover {
+  color: rgba(255, 255, 255, 0.836);
+  cursor: pointer;
+}
+
+
+
+
+/* Showcase/banner section */
+.top-banner {
+	background-image: url('img/cuba\ resized.jpg');
+	height: 700px;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	/*box-shadow: inset 0px -10px 500px orange;*/
+}
+
+
+.top-title {
+	color: lightyellow;
+	background-color:rgb(255, 166, 0.6);
+	font-size: 7.5rem;
+	text-align: center;
+	opacity: 0.9;
+	margin-left: 4rem;
+	margin-top: 7rem;
+	width: 55rem;
+	box-shadow: 20px 20px 0 rgba(255, 217, 0, 0.76);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Properties and other pages */
+/* Banner/title for Properties, Life in Cuba and.... */
+
+.banner {
+  margin-top: 0.5rem;
+  margin-bottom: 5rem;
+  background-color: #fff;
+  height: 20rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.title {
+	color: lightyellow;
+	background-color:rgb(255, 166, 0.6);
+	font-size: 6em;
+	text-align: center;
+	opacity: 0.9;
+  padding: 10px;
+	margin-left: 4.6rem;
+	width: 35rem;
+  height: 8rem;
+	box-shadow: 20px 20px 0 rgba(255, 217, 0, 0.76);
+  transform: translateX(-100px) translateY(10px);
+}
+
+.side-img img{
+  max-height: 20rem;
+}
+
+/* This was super helpful for understanding sizes of elements and also positioning/alignment/justification */
+/* .side-img {
+  border: 3px pink solid;
+}
+.side-img img {
+  border: 3px black solid;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 5rem 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+
+
+/* Specifically properties page */
+.properties-main img {
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.properties-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* when no heigh is set, center of entire space - with set height, center of that specified section*/
+  margin: 10px;
+  text-align: center; /* when the text line gets split (e.g. smaller screen) this is essential, otherwise the default left is ugly */
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.89);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  max-height: 10rem;
+  border-radius: 20px;
+}
+
+.properties-refine {
+  margin: 0 5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.properties-refine .sm {
+  padding-bottom: 30px;
+}
+
+.properties-refine .dot {
+  font-weight: 600;
+}
+
+/* resets the hover style to none for the already selected filter */
+.properties-refine .dot:hover {
+  transform: translateY(0) translateX(0);
+}
+
+
+/* I scrapped this idea - it was ugly and I realised the bold font for selected filter looked better */
+/* .properties-refine .dot::after {
+  content: '';
+  background: #000;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(-70px) translateY(40px);
+} */
+
+.properties-refine ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.properties-refine li {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.properties-refine li:hover {
+  cursor: pointer;
+  transform: translateX(2px) translateY(-1px);
+}
+
+
+
+
+
+/* life in cuba page */
+.life-in-cuba .side-img {
+  transform: translateX(-20px) translateY(20px);
+}
+
+
+
+/* Contact */
+/* .contact .side-img {
+  font-size: 8rem;
+} */
+
+.contact img {
+  border-radius: 50%;
+  max-width: 20rem;
+  transform: translateX(-30px);
+}
+
+/* Footer */
+.footer {
+  margin: 100px 50px 40px;
+  color: #333;
+}
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1080px) {
+  /* maybe change the width dimensions */
+  body {
+    display: none;
+  }
+}
+
+
+@media(max-width: 925px){
+  .banner .title {
+    font-size: 4rem;
+    width: 25rem;
+    height: 5.5rem;
+  }
+}
