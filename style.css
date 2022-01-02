@@ -134,12 +134,28 @@ img {
 
 
 
+/* Home Page */
+.card {
+  margin: 100px;
+  padding: 100px 200px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  line-height: 1.5;
+}
 
+.card a {
+  color: #333;
+}
 
+.card:nth-child(odd) {
+  margin-left: -10px;
+}
 
-
-
-
+.card:nth-child(even) {
+  margin-right: -10px;
+  text-align: right;
+}
 
 
 
