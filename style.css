@@ -365,7 +365,8 @@ img {
 
 
 
-/* Contact */
+/* Contact page */
+
 /* .contact .side-img {
   font-size: 8rem;
 } */
@@ -375,6 +376,79 @@ img {
   max-width: 20rem;
   transform: translateX(-30px);
 }
+
+.contact-main {
+  position: relative;
+  height: 40rem; /* !!!CHANGE ME */
+  width: 100%;
+  background-color: #fff;
+  /* border: 3px #000 solid;  */
+  /* this was just to see the dimensions of the allocated space */
+}
+
+.contact-main form {
+  /* border: 3px #000 solid; */  /* this was just to see the dimensions of the allocated space */
+  /* background-color: #fff; */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  padding: 60px;
+  position: absolute;
+  right: 28%; /* when you adjust padding/margin, you need to re-adjust this*/
+}
+
+.contact-main h3 {
+  padding-bottom: 30px;
+}
+
+.contact-main .field input {
+  font-family: 'Questrial', sans-serif;
+  color: #000;
+  background: none;
+  border: none;
+  border-bottom: 1px #000 solid;
+  padding: 10px;
+  margin: 10px;
+  width: 30rem;
+}
+
+.contact-main .submit-btn {
+  margin: 40px 10px 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px #000 solid;
+}
+
+
+
+
+
+
+
+
+
+
+.social-media {
+  margin: 10px;
+}
+
+.social-media i {
+  font-size: 1.5rem;
+  margin: 5px;
+  color: #000;
+}
+
+.phone {
+  margin: 15px;
+  line-height: 1.4;
+}
+
+.phone i {
+  margin-right: 5px;
+}
+
+
+
 
 /* Footer */
 .footer {
