@@ -291,26 +291,14 @@ img {
   padding-bottom: 30px;
 }
 
-.properties-refine .dot {
+.properties-refine .highlight {
   font-weight: 600;
 }
 
 /* resets the hover style to none for the already selected filter */
-.properties-refine .dot:hover {
+.properties-refine .highlight:hover {
   transform: translateY(0) translateX(0);
 }
-
-
-/* I scrapped this idea - it was ugly and I realised the bold font for selected filter looked better */
-/* .properties-refine .dot::after {
-  content: '';
-  background: #000;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  position: absolute;
-  transform: translateX(-70px) translateY(40px);
-} */
 
 .properties-refine ul {
   display: flex;

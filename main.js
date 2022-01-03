@@ -1,4 +1,4 @@
-// Variables
+// VARIABLES
 
 // Property page filter
 // Property lists for each category
@@ -18,7 +18,7 @@ const havanaBtn = document.getElementById('havana');
 const santaBtn = document.getElementById('santa');
 const islaBtn = document.getElementById('isla');
 
-// Property page popup
+// Property page popup - clickable dots and viewable imgs
 const slide1Img1 = document.querySelector(".pop-up .slide1 .imgs .img1")
 const slide1Img2 = document.querySelector(".pop-up .slide1 .imgs .img2")
 const slide1Img3 = document.querySelector(".pop-up .slide1 .imgs .img3")
@@ -36,26 +36,26 @@ const slide1Dot3 = document.querySelector(".pop-up .slide1 .dots .dot3")
 
 
 
-// Functions
-// dot variable and remove dot function
-const dot = document.querySelector('.dot');
+// FUNCTIONS
+// highlight variable and remove highlight function
+const highlight = document.querySelector('.highlight');
 
-function removeDot() {
-  allBtns.forEach(item => item.classList.remove('dot'));
+function removeHighlight() {
+  allBtns.forEach(item => item.classList.remove('highlight'));
 }
 
 // Functions for event listeners
 function openAll(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'grid';
   }
 }
 
 function openVillas(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'none';
   }
@@ -65,8 +65,8 @@ function openVillas(e) {
 }
 
 function openApartments(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'none';
   }
@@ -76,8 +76,8 @@ function openApartments(e) {
 }
 
 function openHavana(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'none';
   }
@@ -87,8 +87,8 @@ function openHavana(e) {
 }
 
 function openSanta(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'none';
   }
@@ -98,8 +98,8 @@ function openSanta(e) {
 }
 
 function openIsla(e) {
-  removeDot();
-  this.classList.add('dot')
+  removeHighlight();
+  this.classList.add('highlight')
   for (let i = 0; i < allProperties.length; i++) {
     allProperties[i].style.display = 'none';
   }
@@ -109,14 +109,40 @@ function openIsla(e) {
 }
 
 
+// display/hide element function
+function displayBlock(elem) {
+  elem.style.display = 'block';
+}
+function displayNone(...elems) {
+  elems.forEach(elem => elem.style.display = 'none')
+}
 
-// Event Listeners
+// Manipulating dots in pop-up section
+function addDot(dot) {
+  dot.classList.add('current-dot')
+}
+function removeDot(...dots) {
+  dots.forEach(dot => dot.classList.remove('current-dot'))
+}
+
+
+// EVENT LISTENERS
 allBtn.addEventListener('click', openAll);
 villaBtn.addEventListener('click', openVillas);
 apartmentBtn.addEventListener('click', openApartments);
 havanaBtn.addEventListener('click', openHavana);
 santaBtn.addEventListener('click', openSanta);
 islaBtn.addEventListener('click', openIsla);
+
+
+
+
+
+
+
+
+
+
 
 
 // Property page "see more"
@@ -128,19 +154,14 @@ const closeBtn = document.querySelector(".pop-up .close");
 const popUp = document.querySelector(".pop-up");
 
 function openPopUp(e) {
-  popUp.style.display = 'block';
-  slide1Img1.style.display = "block";
-  slide1Dot1.classList.add('current-dot')
-  slide1Dot2.classList.remove('current-dot')
-  slide1Dot3.classList.remove('current-dot')
+  displayBlock(popUp);
+  displayBlock(slide1Img1);
+  addDot(slide1Dot1);
+  removeDot(slide1Dot2, slide1Dot3)
 }
 
 function closePopUp(e) {
-  popUp.style.display = 'none';
-  // also need to close all imgs
-  slide1Img1.style.display = "none";
-  slide1Img2.style.display = "none";
-  slide1Img3.style.display = "none";
+  displayNone(popUp, slide1Img1, slide1Img2, slide1Img3)
 }
 
 popUpBtn.addEventListener('click', openPopUp);
@@ -148,52 +169,31 @@ closeBtn.addEventListener('click', closePopUp)
 
 
 
+
+
+
+
 // View images
-// const imgsSlide1 = document.querySelectorAll(".pop-up .slide1 .imgs img");
-// const dotsSlide1 = document.querySelectorAll(".pop-up .slide1 .dots .dot")
-
-// function changeImg(e) {
-//   for (let i = 0; i < dotsSlide1; i++) {
-//     if (e.target == dotsSlide1[i]) {
-//       imgsSlide1[i].style.display = 'block'
-//       // e.target.style.classList = 'current-dot';
-//     } else {
-//       imgsSlide1[i].style.display = 'hidden'
-//     }
-//   }
-// }
-
-
-// dotsSlide1.addEventListener('click', changeImg);
-
-
-
 
 function showImg1(e) {
-  slide1Img1.style.display = "block";
-  slide1Dot1.classList.add('current-dot')
-  slide1Img2.style.display = "none";
-  slide1Dot2.classList.remove('current-dot')
-  slide1Img3.style.display = "none";
-  slide1Dot3.classList.remove('current-dot')
+  displayBlock(slide1Img1);
+  displayNone(slide1Img2, slide1Img3);
+  addDot(slide1Dot1);
+  removeDot(slide1Dot2, slide1Dot3)
 }
 
 function showImg2(e) {
-  slide1Img1.style.display = "none";
-  slide1Dot1.classList.remove('current-dot')
-  slide1Img2.style.display = "block";
-  slide1Dot2.classList.add('current-dot')
-  slide1Img3.style.display = "none";
-  slide1Dot3.classList.remove('current-dot')
+  displayBlock(slide1Img2);
+  displayNone(slide1Img1, slide1Img3);
+  addDot(slide1Dot2);
+  removeDot(slide1Dot1, slide1Dot3)
 }
 
 function showImg3(e) {
-  slide1Img1.style.display = "none";
-  slide1Dot1.classList.remove('current-dot')
-  slide1Img2.style.display = "none";
-  slide1Dot2.classList.remove('current-dot')
-  slide1Img3.style.display = "block";
-  slide1Dot3.classList.add('current-dot')
+  displayBlock(slide1Img3);
+  displayNone(slide1Img1, slide1Img2);
+  addDot(slide1Dot3);
+  removeDot(slide1Dot1, slide1Dot2)
 }
 
 slide1Dot1.addEventListener('click', showImg1);
