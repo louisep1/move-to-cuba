@@ -1,24 +1,9 @@
-const img1s = document.querySelectorAll('.pop-up .imgs .img1')
-const img2s = document.querySelectorAll('.pop-up .imgs .img2')
-const img3s = document.querySelectorAll('.pop-up .imgs .img3')
-
-const dot1s = document.querySelectorAll('.pop-up .dots .dot1');
-const dot2s = document.querySelectorAll('.pop-up .dots .dot2');
-const dot3s = document.querySelectorAll('.pop-up .dots .dot3');
-
-
-// VARIABLES
-
+// part A
 // Property list
 const allProperties = document.getElementsByClassName('all');
 // Filter buttons
 const allBtns = document.querySelectorAll('.refine-btn');
 
-
-
-
-
-// FUNCTIONS
 
 // HELPER FUNCTIONS
 // display: block/none for single elements 
@@ -58,28 +43,33 @@ function displayProperties(e) {
   displayGridArr(matched);
 }
 
-// EVENT LISTENERS
+// Event listener
 allBtns.forEach(btn => btn.addEventListener('click', displayProperties));
 
 
 
+// 
+// 
+// 
+// 
+// 
+// 
 
 
-
-
-
-
-
-
-
-
-
-
+// part B
 // Property page "see more" pop-up open and close functions, scroll through imgs and event listeners
+const img1s = document.querySelectorAll('.pop-up .imgs .img1')
+const img2s = document.querySelectorAll('.pop-up .imgs .img2')
+const img3s = document.querySelectorAll('.pop-up .imgs .img3')
+
+const dot1s = document.querySelectorAll('.pop-up .dots .dot1');
+const dot2s = document.querySelectorAll('.pop-up .dots .dot2');
+const dot3s = document.querySelectorAll('.pop-up .dots .dot3');
+
+
 const popUpBtns = document.querySelectorAll(".pop-up-btn");
 const closeBtns = document.querySelectorAll(".pop-up .close");
 const popUps = document.querySelectorAll(".pop-up");
-
 
 
 // Manipulating dots in pop-up section
@@ -98,6 +88,7 @@ function removeDots() {
 }
 
 
+// Open and close pop-up
 function openPopUp(e) {
   // because it is NOT an ARRAY, it's a NODE LIST
   const index = Array.prototype.indexOf.call(popUpBtns, this);
@@ -112,7 +103,7 @@ function closePopUp(e) {
 }
 
 
-
+// Flick between images
 function scrollImg1s(e) {
   const index = Array.prototype.indexOf.call(dot1s, this);
   removeDots()
@@ -134,9 +125,38 @@ function scrollImg3s(e) {
   displayBlock(img3s[index]);
 }
 
+
+// Event listeners
 popUpBtns.forEach(btn => btn.addEventListener('click', openPopUp));
 closeBtns.forEach(btn => btn.addEventListener('click', closePopUp));
 
 dot1s.forEach(d => d.addEventListener('click', scrollImg1s));
 dot2s.forEach(d => d.addEventListener('click', scrollImg2s));
 dot3s.forEach(d => d.addEventListener('click', scrollImg3s));
+
+
+
+// input pop-up section text from listings section
+const nameField = document.querySelectorAll('.pop-up .container .description .prop-name');
+const locationField = document.querySelectorAll('.pop-up .container .description .prop-location');
+const descriptionField = document.querySelectorAll('.pop-up .container .description .prop-description');
+const contentField = document.querySelectorAll('.pop-up .container .description .prop-content');
+
+const propName = document.querySelectorAll('.properties-main .all .properties-text .prop-name');
+const propLocation = document.querySelectorAll('.properties-main .all .properties-text .prop-location');
+const propDescription = document.querySelectorAll('.properties-main .all .properties-text .prop-description');
+const propContent = document.querySelectorAll('.properties-main .all .properties-text .prop-content');
+
+function inputFields(textArr, destinationArr) {
+  for (let i = 0; i < textArr.length; i++) {
+    destinationArr[i].innerHTML = textArr[i].innerHTML;
+  }
+}
+
+inputFields(propName, nameField);
+inputFields(propLocation, locationField);
+inputFields(propDescription, descriptionField);
+inputFields(propContent, contentField);
+
+
+// LAST THING TO DO ON THIS PAGE IS LINK THE IMGS - DISPLAY THE FIRST ONE BUT OTHERS CAN BE SET TO HIDDEN IN THE TOP LISTINGS PART

@@ -343,6 +343,10 @@ img {
   margin: 0 5px 15px;
 }
 
+.properties-text .prop-content {
+  display: none;
+}
+
 .properties-main .pop-up-btn {
   grid-column: 2;
   text-align: right;
