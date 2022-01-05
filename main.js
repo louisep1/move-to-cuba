@@ -1,3 +1,12 @@
+const img1s = document.querySelectorAll('.pop-up .imgs .img1')
+const img2s = document.querySelectorAll('.pop-up .imgs .img2')
+const img3s = document.querySelectorAll('.pop-up .imgs .img3')
+
+const dot1s = document.querySelectorAll('.pop-up .dots .dot1');
+const dot2s = document.querySelectorAll('.pop-up .dots .dot2');
+const dot3s = document.querySelectorAll('.pop-up .dots .dot3');
+
+
 // VARIABLES
 
 // Property list
@@ -5,9 +14,7 @@ const allProperties = document.getElementsByClassName('all');
 // Filter buttons
 const allBtns = document.querySelectorAll('.refine-btn');
 
-// Dots and imgs node lists for 1st slide ONLY !!!!!
-const slide1 = document.querySelectorAll('.pop-up .slide1 .imgs img');
-const dots1 = document.querySelectorAll('.pop-up .slide1 .dots .dot');
+
 
 
 
@@ -29,13 +36,7 @@ function displayGridArr([...elems]) {
   elems.forEach(elem => elem.style.display = 'grid')
 }
 
-// Manipulating dots in pop-up section
-function addDot(dot) {
-  dot.classList.add('current-dot')
-}
-function removeDots([...dots]) {
-  dots.forEach(dot => dot.classList.remove('current-dot'))
-}
+
 
 // highlight variable and remove highlight function
 const highlight = document.querySelector('.highlight');
@@ -63,45 +64,79 @@ allBtns.forEach(btn => btn.addEventListener('click', displayProperties));
 
 
 
-// Property page "see more" pop-up and close functions and event listeners
-const popUpBtn = document.querySelector(".pop-up-btn");
-// !!!!!!!!!  later revise this as an array of all buttons and loop through to display correct one
 
-const closeBtn = document.querySelector(".pop-up .close");
 
-const popUp = document.querySelector(".pop-up");
+
+
+
+
+
+
+
+
+
+// Property page "see more" pop-up open and close functions, scroll through imgs and event listeners
+const popUpBtns = document.querySelectorAll(".pop-up-btn");
+const closeBtns = document.querySelectorAll(".pop-up .close");
+const popUps = document.querySelectorAll(".pop-up");
+
+
+
+// Manipulating dots in pop-up section
+function addDot(dot) {
+  dot.classList.add('current-dot')
+}
+
+function removeDots() {
+  // removes all the dots and sets all imgs to display: none
+  dot1s.forEach(dot => dot.classList.remove('current-dot'));
+  dot2s.forEach(dot => dot.classList.remove('current-dot'));
+  dot3s.forEach(dot => dot.classList.remove('current-dot'));
+  displayNoneArr(img1s);
+  displayNoneArr(img2s);
+  displayNoneArr(img3s);
+}
+
 
 function openPopUp(e) {
-  displayBlock(popUp);
-  displayBlock(slide1[0]);
-  removeDots(dots1)
-  addDot(dots1[0]);
+  // because it is NOT an ARRAY, it's a NODE LIST
+  const index = Array.prototype.indexOf.call(popUpBtns, this);
+  displayBlock(popUps[index]);
+  displayBlock(img1s[index]);
+  addDot(dot1s[index]);
 }
 
 function closePopUp(e) {
-  displayNone(popUp)
-  displayNoneArr(slide1)
+  displayNoneArr(popUps)
+  removeDots()
 }
 
-popUpBtn.addEventListener('click', openPopUp);
-closeBtn.addEventListener('click', closePopUp)
 
 
-
-
-
-
-
-// View images function and event listener
-function scrollImgs(e) {
-  displayNoneArr(slide1)
-  removeDots(dots1)
-  for (let i = 0; i < dots1.length; i++) {
-    if (dots1[i] === this) {
-      displayBlock(slide1[i])
-      addDot(dots1[i])
-    }
-  }
+function scrollImg1s(e) {
+  const index = Array.prototype.indexOf.call(dot1s, this);
+  removeDots()
+  addDot(dot1s[index])
+  displayBlock(img1s[index]);
 }
 
-dots1.forEach(d => d.addEventListener('click', scrollImgs));
+function scrollImg2s(e) {
+  const index = Array.prototype.indexOf.call(dot2s, this);
+  removeDots()
+  addDot(dot2s[index])
+  displayBlock(img2s[index]);
+}
+
+function scrollImg3s(e) {
+  const index = Array.prototype.indexOf.call(dot3s, this);
+  removeDots()
+  addDot(dot3s[index])
+  displayBlock(img3s[index]);
+}
+
+popUpBtns.forEach(btn => btn.addEventListener('click', openPopUp));
+closeBtns.forEach(btn => btn.addEventListener('click', closePopUp));
+
+dot1s.forEach(d => d.addEventListener('click', scrollImg1s));
+dot2s.forEach(d => d.addEventListener('click', scrollImg2s));
+dot3s.forEach(d => d.addEventListener('click', scrollImg3s));
