@@ -58,13 +58,15 @@ allBtns.forEach(btn => btn.addEventListener('click', displayProperties));
 
 // part B
 // Property page "see more" pop-up open and close functions, scroll through imgs and event listeners
-const img1s = document.querySelectorAll('.pop-up .imgs .img1')
-const img2s = document.querySelectorAll('.pop-up .imgs .img2')
-const img3s = document.querySelectorAll('.pop-up .imgs .img3')
+const img1s = document.querySelectorAll('.pop-up .imgs .img1');
+const img2s = document.querySelectorAll('.pop-up .imgs .img2');
+const img3s = document.querySelectorAll('.pop-up .imgs .img3');
+const img4s = document.querySelectorAll('.pop-up .imgs .img4');
 
 const dot1s = document.querySelectorAll('.pop-up .dots .dot1');
 const dot2s = document.querySelectorAll('.pop-up .dots .dot2');
 const dot3s = document.querySelectorAll('.pop-up .dots .dot3');
+const dot4s = document.querySelectorAll('.pop-up .dots .dot4');
 
 
 const popUpBtns = document.querySelectorAll(".pop-up-btn");
@@ -82,9 +84,11 @@ function removeDots() {
   dot1s.forEach(dot => dot.classList.remove('current-dot'));
   dot2s.forEach(dot => dot.classList.remove('current-dot'));
   dot3s.forEach(dot => dot.classList.remove('current-dot'));
+  dot4s.forEach(dot => dot.classList.remove('current-dot'));
   displayNoneArr(img1s);
   displayNoneArr(img2s);
   displayNoneArr(img3s);
+  displayNoneArr(img4s);
 }
 
 
@@ -125,6 +129,13 @@ function scrollImg3s(e) {
   displayBlock(img3s[index]);
 }
 
+function scrollImg4s(e) {
+  const index = Array.prototype.indexOf.call(dot4s, this);
+  removeDots()
+  addDot(dot4s[index])
+  displayBlock(img4s[index]);
+}
+
 
 // Event listeners
 popUpBtns.forEach(btn => btn.addEventListener('click', openPopUp));
@@ -133,6 +144,7 @@ closeBtns.forEach(btn => btn.addEventListener('click', closePopUp));
 dot1s.forEach(d => d.addEventListener('click', scrollImg1s));
 dot2s.forEach(d => d.addEventListener('click', scrollImg2s));
 dot3s.forEach(d => d.addEventListener('click', scrollImg3s));
+dot4s.forEach(d => d.addEventListener('click', scrollImg4s));
 
 
 
@@ -160,3 +172,10 @@ inputFields(propContent, contentField);
 
 
 // LAST THING TO DO ON THIS PAGE IS LINK THE IMGS - DISPLAY THE FIRST ONE BUT OTHERS CAN BE SET TO HIDDEN IN THE TOP LISTINGS PART
+
+// Notes:
+// For each additional img you want to add to the pop-up section -
+// add the img, add the dot -
+// then make sure that (a)javascript and (b)CSS (display: none) covers up to that img/dot number, if not copy/paste/rename
+// 
+
