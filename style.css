@@ -350,8 +350,7 @@ img {
   /* border: 3px blue solid; */
   display: grid;
   grid-template-columns: 2fr 1fr;
-  /* height: 40rem; */
-  height: 35rem;
+  height: 40rem;
   margin: auto;
   width: 90%;
   background-color: #fff;
