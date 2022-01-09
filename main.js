@@ -171,6 +171,7 @@ inputFields(propDescription, descriptionField);
 inputFields(propContent, contentField);
 
 
+
 // LAST THING TO DO ON THIS PAGE IS LINK THE IMGS - DISPLAY THE FIRST ONE BUT OTHERS CAN BE SET TO HIDDEN IN THE TOP LISTINGS PART
 
 // Notes:
@@ -181,3 +182,5 @@ inputFields(propContent, contentField);
 
 // FUTURE UPDATES:
 // Slightly advanced but I would like to add a swipe left/right function for the images on a mobile device
+
+// Also maybe click img to view enlargement

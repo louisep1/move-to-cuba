@@ -8,15 +8,9 @@
   padding: 0;
 }
 
-/* html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-} */
-
 body {
 	font-family: 'Questrial', sans-serif;
 	background-color: rgba(255, 140, 0, 0.89);
-  /* background-color: rgba(255, 150, 0, 0.89); */
 }
 
 a {
@@ -31,8 +25,6 @@ ul {
 img {
   width: 100%;
 }
-
-
 
 
 /* Maybe "utilities" */
@@ -58,8 +50,6 @@ img {
 
 
 
-
-
 /* Nav section */
 .top-nav {
   display: flex;
@@ -67,10 +57,8 @@ img {
   margin: 5px 10px;
 }
 
-
 /* Nav section - logo */
 .logo-left {
-  /* padding-top: 2px; */
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.486);
@@ -120,19 +108,14 @@ img {
 
 
 
-
 /* Showcase/banner section */
 .top-banner {
 	background-image: url('img/cuba\ resized.jpg');
 	height: 700px;
 	width: 100%;
-  /* position: fixed;
-  z-index: -1; */
 	position: relative;
 	display: inline-block;
-	/*box-shadow: inset 0px -10px 500px orange;*/
 }
-
 
 .top-title {
 	color: lightyellow;
@@ -145,8 +128,6 @@ img {
 	width: 55rem;
 	box-shadow: 20px 20px 0 rgba(255, 217, 0, 0.76);
 }
-
-
 
 
 
@@ -211,13 +192,8 @@ img {
 
 
 
-
-
-
-
 /* Properties and other pages */
 /* Banner/title for Properties, Life in Cuba and.... */
-
 .banner {
   margin-top: 0.5rem;
   margin-bottom: 5rem;
@@ -246,39 +222,6 @@ img {
 .side-img img{
   max-height: 20rem;
 }
-
-/* This was super helpful for understanding sizes of elements and also positioning/alignment/justification */
-/* .side-img {
-  border: 3px pink solid;
-}
-.side-img img {
-  border: 3px black solid;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 5rem 2rem;
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  align-items: center;
-}
-
 
 
 /* Specifically properties page */
@@ -315,6 +258,7 @@ img {
   background-color: orange;
   padding: 10px;
   border-radius: 10px;
+  margin: 5px;
 }
 
 .properties-refine li:hover {
@@ -323,6 +267,18 @@ img {
 }
 
 /* Actual property listings */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 5rem 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  align-items: center;
+}
+
 .properties-main img {
   margin: 10px;
   border-radius: 10px;
@@ -339,7 +295,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* when no heigh is set, center of entire space - with set height, center of that specified section*/
+  align-items: center; /* when no height is set, center of entire space - with set height, center of that specified section*/
   margin: 10px;
   text-align: center; /* when the text line gets split (e.g. smaller screen) this is essential, otherwise the default left is ugly */
   line-height: 1.5;
@@ -374,18 +330,10 @@ img {
   /* border: 3px red solid; */
   display: none;
   position: fixed;
-  
-  /* top: 10px; */
-  /* height: 40.5rem; */
-
   height: 100%;
   top: 0;
   padding-top: 5px;
   backdrop-filter: brightness(50%);
-
-  /* width: 90%;
-  margin: auto; */
-  /* I like this width and margin too, but decide later */
 }
 
 .pop-up .close {
@@ -402,11 +350,10 @@ img {
   /* border: 3px blue solid; */
   display: grid;
   grid-template-columns: 2fr 1fr;
-  height: 40rem;
-  /* height: 35rem; */
+  /* height: 40rem; */
+  height: 35rem;
   margin: auto;
   width: 90%;
-   /* margin: 30px; */
   background-color: #fff;
 }
 
@@ -466,10 +413,6 @@ img {
   background-color: rgb(143, 142, 142);
 }
 
-/* .hide-img {
-  display: none;
-} */
-/* !!!! check but maybe I can delete this */
 
 
 /* life in cuba page */
@@ -480,11 +423,6 @@ img {
 
 
 /* Contact page */
-
-/* .contact .side-img {
-  font-size: 8rem;
-} */
-
 .contact img {
   border-radius: 50%;
   max-width: 20rem;
@@ -501,8 +439,7 @@ img {
 }
 
 .contact-main form {
-  /* border: 3px #000 solid; */  /* this was just to see the dimensions of the allocated space */
-  /* background-color: #fff; */
+  /* border: 3px #000 solid; */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   padding: 60px;
@@ -533,15 +470,7 @@ img {
   border: 1px #000 solid;
 }
 
-
-
-
-
-
-
-
-
-
+/* Social media */
 .social-media {
   margin: 10px;
 }
@@ -628,7 +557,6 @@ img {
     
   .properties-refine li {
     padding: 5px;
-    margin: 5px;
   }
 
   /* Properties main */
