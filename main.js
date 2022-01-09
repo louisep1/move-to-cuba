@@ -177,5 +177,7 @@ inputFields(propContent, contentField);
 // For each additional img you want to add to the pop-up section -
 // add the img, add the dot -
 // then make sure that (a)javascript and (b)CSS (display: none) covers up to that img/dot number, if not copy/paste/rename
-// 
+//
 
+// FUTURE UPDATES:
+// Slightly advanced but I would like to add a swipe left/right function for the images on a mobile device
